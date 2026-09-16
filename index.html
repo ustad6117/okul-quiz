@@ -24,6 +24,65 @@
  .explain{font-size:8px;margin-top:2px;padding:2px 4px}.status{font-size:8px;margin:2px 0}.progress{height:3px}
 }
 </style>
+
+<style id="lcd-pano-tall-layout">
+html,body{width:100%;height:100%;min-height:100%;margin:0;overflow:hidden}
+body{display:flex}
+.wrap{
+  width:100%;height:100vh;min-height:100vh;
+  display:grid;
+  grid-template-rows:auto 1fr auto;
+  overflow:hidden;
+}
+.head{flex:none}
+.main{
+  min-height:0;height:100%;
+  display:grid;
+  grid-template-rows:auto minmax(76px,1.05fr) minmax(180px,2.25fr) minmax(78px,.95fr) auto;
+  align-content:stretch;
+  gap:clamp(6px,1.1vh,11px);
+  padding:clamp(8px,1.3vh,13px) clamp(8px,3vw,14px);
+  overflow:hidden;
+}
+.cat{align-self:start}
+.q{
+  display:flex;align-items:center;
+  margin:0;min-height:0;
+  font-size:clamp(18px,6.2vw,27px);
+  line-height:1.13;
+}
+.opts{
+  min-height:0;
+  display:grid;
+  grid-template-rows:repeat(4,1fr);
+  gap:clamp(6px,1vh,10px);
+}
+.opt{
+  min-height:0;height:auto;
+  display:flex;align-items:center;
+  padding:clamp(7px,1.2vh,12px) clamp(8px,2.6vw,13px);
+  font-size:clamp(15px,4.8vw,21px);
+}
+.letter{flex:0 0 auto}
+.explain{
+  min-height:0;height:auto;
+  display:flex;align-items:center;
+  margin:0;
+  padding:clamp(7px,1.2vh,11px);
+  font-size:clamp(13px,4vw,18px);
+  line-height:1.18;
+  overflow:hidden;
+}
+.status{margin:0;align-self:end}
+.foot{flex:none}
+@media (max-height:500px){
+ .main{grid-template-rows:auto minmax(48px,.9fr) minmax(120px,2fr) minmax(45px,.8fr) auto;gap:4px;padding:5px 7px}
+ .q{font-size:clamp(14px,5vw,20px)}
+ .opt{padding:4px 7px;font-size:clamp(12px,4vw,17px)}
+ .explain{font-size:clamp(11px,3.5vw,15px);padding:4px 6px}
+}
+</style>
+
 </head>
 <body>
 <div class="card">
